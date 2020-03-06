@@ -50,8 +50,8 @@ def comparison():
 @app.route("/data")
 def dataTable():
 
-    patientDF = pd.read_sql_query('select * from patient',con=engine)
-    htmlTable = patientDF.to_html()
+    #patientDF = pd.read_sql_query('select * from patient',con=engine)
+    htmlTable = coronaDF.to_html()
     coronaData = {
         'table': htmlTable
     }
@@ -72,9 +72,10 @@ def makeMap():
         
         for index, row in currentDF.iterrows():
             
-            visitList.append({'latitude':row['latitude'],'longitude':row['longitude']})
-            
-        patientDict[f'patient{patient}'] = visitList
+            visitList.append({'latitude':row['latitude'],'longitude':row['longitude'], 'place':row['visit']})
+
+        patientDict[patient] = visitList   
+        #patientDict[f'patient{patient}'] = visitList
 
     return render_template("map.html", data=patientDict)
 
