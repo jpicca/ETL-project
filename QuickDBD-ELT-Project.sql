@@ -24,7 +24,7 @@ CREATE TABLE "patient" (
 );
 
 CREATE TABLE "route" (
-    "id" SERIAL,
+    "id" SERIAL   NOT NULL,
     "patient_id" INT   NULL,
     "date" DATE   NULL,
     "province" VARCHAR   NULL,
@@ -46,6 +46,24 @@ CREATE TABLE "route" (
     "deceased_date" DATE   NULL,
     "state" VARCHAR   NULL,
     CONSTRAINT "pk_route" PRIMARY KEY (
+        "id"
+     )
+);
+
+CREATE TABLE "time" (
+    "id" SERIAL   NOT NULL,
+    "date" DATE   NULL,
+    "acc_test" INT   NULL,
+    "acc_negative" INT   NULL,
+    "acc_confirmed" INT   NULL,
+    "acc_released" INT   NULL,
+    "acc_deceased" INT   NULL,
+    "new_test" INT   NULL,
+    "new_negative" INT   NULL,
+    "new_confirmed" INT   NULL,
+    "new_released" INT   NULL,
+    "new_deceased" INT   NULL,
+    CONSTRAINT "pk_time" PRIMARY KEY (
         "id"
      )
 );
