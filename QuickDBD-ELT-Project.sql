@@ -56,6 +56,36 @@ CREATE TABLE "time" (
      )
 );
 
+CREATE TABLE "route_patient" (
+    "ID" SERIAL   NOT NULL,
+    "patient_id" INT   NOT NULL,
+    "sex" varchar   NULL,
+    "birth_year" int   NULL,
+    "country" varchar   NULL,
+    "region" varchar   NULL,
+    "group" varchar   NULL,
+    "infection_reason" varchar   NULL,
+    "infection_order" int   NULL,
+    "infected_by" int   NULL,
+    "contact_number" int   NULL,
+    "confirmed_date" date   NULL,
+    "released_date" date   NULL,
+    "deceased_date" date   NULL,
+    "state" varchar   NULL,
+    "date" date   NULL,
+    "province" varchar   NULL,
+    "city" varchar   NULL,
+    "visit" varchar   NULL,
+    "latitude" float   NULL,
+    "longitude" float   NULL,
+    CONSTRAINT "pk_route_patient" PRIMARY KEY (
+        "ID"
+     )
+);
+
 ALTER TABLE "route" ADD CONSTRAINT "fk_route_patient_id" FOREIGN KEY("patient_id")
+REFERENCES "patient" ("patient_id");
+
+ALTER TABLE "route_patient" ADD CONSTRAINT "fk_route_patient_patient_id" FOREIGN KEY("patient_id")
 REFERENCES "patient" ("patient_id");
 
