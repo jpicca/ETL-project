@@ -7,15 +7,15 @@ app = Flask(__name__)
 
 # Set up connection to database
 # **** Note -- port number is currently 5433, but most users likely need 5432 ****
-rds_connection_string = "postgres:postgres@localhost:5433/ELT_Project"
+rds_connection_string = "postgres:postgres@localhost:5432/ELT_Project"
 engine = create_engine(f'postgresql://{rds_connection_string}')
 
 # Find one record of data from the mongo database
 
 # ******* This will be the final table to which we point *******
-# coronaDF = pd.read_sql_query('select & from routeAndPatient',con=engine)
+coronaDF = pd.read_sql_query('select * from route_patient',con=engine)
 
-coronaDF = pd.read_sql_query('select * from patient',con=engine)
+#coronaDF = pd.read_sql_query('select * from patient',con=engine)
 routeDF = pd.read_sql_query('select * from route',con=engine)
 
 # Route to render index.html template using data from Mongo
