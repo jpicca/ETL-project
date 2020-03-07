@@ -2,7 +2,7 @@
 
 ## Technical Report
 
-The technical report can be found in the following file: 
+The technical report can be found in the following file: [Tech Notebook](https://github.com/jpicca/ETL-project/blob/master/ETL_Project_Notebook_Master.ipynb)
 
 ## Web Front-End
 
