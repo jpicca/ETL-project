@@ -11,6 +11,10 @@ rds_connection_string = "postgres:postgres@localhost:5433/ELT_Project"
 engine = create_engine(f'postgresql://{rds_connection_string}')
 
 # Find one record of data from the mongo database
+
+# ******* This will be the final table to which we point *******
+# coronaDF = pd.read_sql_query('select & from routeAndPatient',con=engine)
+
 coronaDF = pd.read_sql_query('select * from patient',con=engine)
 routeDF = pd.read_sql_query('select * from route',con=engine)
 
