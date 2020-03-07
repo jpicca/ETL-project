@@ -32,19 +32,6 @@ CREATE TABLE "route" (
     "visit" VARCHAR   NULL,
     "latitude" FLOAT   NULL,
     "longitude" FLOAT   NULL,
-    "sex" VARCHAR   NULL,
-    "birth_year" INT   NULL,
-    "country" VARCHAR   NULL,
-    "region" VARCHAR   NULL,
-    "group" INT   NULL,
-    "infection_reason" VARCHAR   NULL,
-    "infection_order" INT   NULL,
-    "infected_by" INT   NULL,
-    "contact_number" INT   NULL,
-    "confirmed_date" DATE   NULL,
-    "released_date" DATE   NULL,
-    "deceased_date" DATE   NULL,
-    "state" VARCHAR   NULL,
     CONSTRAINT "pk_route" PRIMARY KEY (
         "id"
      )
@@ -53,6 +40,7 @@ CREATE TABLE "route" (
 CREATE TABLE "time" (
     "id" SERIAL   NOT NULL,
     "date" DATE   NULL,
+    "time" INT   NOT NULL,
     "acc_test" INT   NULL,
     "acc_negative" INT   NULL,
     "acc_confirmed" INT   NULL,
