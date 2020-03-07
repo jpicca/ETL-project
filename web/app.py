@@ -39,13 +39,13 @@ def home():
     # Return template and data
     return render_template("index.html", data=coronaData)
 
-@app.route("/images")
+'''@app.route("/images")
 def comparison():
 
     coronaData = 'this is the images page'
 
     # Return template and data
-    return render_template("comparison.html", data=coronaData)
+    return render_template("comparison.html", data=coronaData)'''
 
 @app.route("/data")
 def dataTable():
